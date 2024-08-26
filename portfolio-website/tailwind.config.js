@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors:{
-        "portfolio-bg":"#405D72",
-        "portfolio-light":"#758694",
-        "portfolio-ligther":"#F7E7DC",
-        "portfolio-lightest":"#FFF8F3",
+        "portfolio-bg":"#092635",
+        "portfolio-light":"#1B4242",
+        "portfolio-lighter":"#5C8374",
+        "portfolio-lightest":"#9EC8B9",
       }
     },
   },
