@@ -1,12 +1,16 @@
 
 import './App.css'
+import HomePage from './components/HomePage'
 
 function App() {
   
 
   return (
     <>
-    <div className='text-rose-500'>Hello World!</div>
+      {/* Home Page */}
+      <div className='w-full h-full'>
+        <HomePage></HomePage>
+      </div>
       
     </>
   )
