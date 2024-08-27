@@ -1,10 +1,10 @@
 function HomePage() {
   return (
     <>
-      <div className="w-screen px-36 pt-24 h-screen bg-portfolio-bg font-['Roboto']">
-        <div className="w-full h-full flex justify-start">
+      <div className=" px-36 pt-24 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
+        <div className="w-full h-full justify-start flex">
           {/* Left half introduction */}
-          <div className="w-1/2">
+          <div className="w-1/2 fixed">
             {/* name */}
             <div className="text-portfolio-lightest text-5xl mb-3 flex flex-col space-y-3 font-black">
               <img
@@ -42,7 +42,7 @@ function HomePage() {
           </div>
 
           {/* right half */}
-          <div className="w-1/2">
+          <div className="w-1/2 ml-[50%]">
             {/* about description */}
             <div className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
@@ -64,20 +64,48 @@ function HomePage() {
               journey.
               <br></br>
               <br></br>
-              Let’s connect and discuss anything about technology!
+              
             </div>
 
             {/* Experience */}
-            <div className="">
+            <div className="  ">
               {/* card kind of thing for each experience */}
-              <div className="flex items-start space-x-16">
-                <div className="text-portfolio-lighter mt-1 text-xs font-bold">2023 - PRESENT</div>
+              <div className="card hover:bg-white/5 p-2 rounded-sm hover:ring-1 hover:ring-portfolio-light hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              <a target="_blank" className="flex items-start " href="https://www.hsc.com/">
+                <div className="text-portfolio-lightest mt-1 min-w-[150px] text-xs font-bold">AUG 2023 - PRESENT</div>
                 <div>
-                  <div className="text-portfolio-lightest">Software Engineer (T0) | <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold"><a href="https://www.hsc.com/">Hughes Systique Corporation</a> </span></div>
+                  <div className="text-portfolio-lightest font-semibold mb-2">Software Engineer (T0) | <span className=" text-portfolio-lightest font-semibold">Hughes Systique Corporation </span></div>
+                  <div className="text-sm text-portfolio-lighter">
+                  Ideated and developed a RAG solution with 3GPP specifications and the front-end UI for an in-house chatbot application. Specifically, responsible for developing the user interface and backend of the application. Successfully implemented the user interface, which is utilized by more than 100 employees. Additionally, and won the bronze medal in a global ITU Competition for the RAG solution.
+
+                  </div>
                 </div>
+                </a>
               </div>
+              <div className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm  hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              <a target="_blank" className="flex items-start " href="https://www.hsc.com/">
+                <div className="text-portfolio-lightest mt-1   min-w-[150px]  text-xs font-bold">JAN 2023 - AUG 2023</div>
+                <div>
+                  <div className="text-portfolio-lightest font-semibold mb-2">Software Engineer Trainee | <span className="text-portfolio-lightest font-semibold">Hughes Systique Corporation </span></div>
+                  <div className="text-sm text-portfolio-lighter">
+                  Designed a dynamic web interface using Streamlit to visualize the constellation diagram and real-time plotting of bit error rate with varying channel conditions and SNR values using a neural receiver model.
 
+                  </div>
+                </div>
+                </a>
+              </div>
+              <div className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              <a target="_blank" className="flex items-start " href="https://www.learnemp.in/">
+                <div className="text-portfolio-lightest mt-1   min-w-[150px]  text-xs font-bold">JAN 2022 - APR 2022</div>
+                <div>
+                  <div className="text-portfolio-lightest font-semibold mb-2">Game Design and Development Intern | <span className="text-portfolio-lightest font-semibold">Learn and Empower Private Ltd </span></div>
+                  <div className="text-sm text-portfolio-lighter">
+                  Worked on game design, development and logic requirements of sub levels in Resonate Learning App using Unity using C#. Ensured the best possible performance, quality, and responsiveness of the game.
 
+                  </div>
+                </div>
+                </a>
+              </div>
             </div>
 
           </div>

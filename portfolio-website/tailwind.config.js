@@ -8,7 +8,8 @@ export default {
         "portfolio-light":"#1B4242",
         "portfolio-lighter":"#5C8374",
         "portfolio-lightest":"#9EC8B9",
-      }
+      },
+      
     },
   },
   plugins: [],
