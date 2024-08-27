@@ -8,7 +8,7 @@ function HomePage() {
             {/* name */}
             <div className="text-portfolio-lightest text-5xl mb-3 flex flex-col space-y-3 font-black">
               <img
-                className="w-16 h-16 object-cover rounded-full drop-shadow-md ring-2 ring-portfolio-lightest"
+                className="w-16 animate-bounce h-16 object-cover rounded-full drop-shadow-md ring-2 ring-portfolio-lightest"
                 src="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/2.0profile.png?alt=media&token=de6a5824-0e95-47a5-a0ed-6fa78bcddfa7"
                 alt=""
               />
@@ -64,11 +64,19 @@ function HomePage() {
               journey.
               <br></br>
               <br></br>
-              Let’s connect and discuss the future of technology!
+              Let’s connect and discuss anything about technology!
             </div>
 
             {/* Experience */}
             <div className="">
+              {/* card kind of thing for each experience */}
+              <div className="flex items-start space-x-16">
+                <div className="text-portfolio-lighter mt-1 text-xs font-bold">2023 - PRESENT</div>
+                <div>
+                  <div className="text-portfolio-lightest">Software Engineer (T0) | <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold"><a href="https://www.hsc.com/">Hughes Systique Corporation</a> </span></div>
+                </div>
+              </div>
+
 
             </div>
 
