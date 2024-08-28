@@ -1,13 +1,31 @@
-import { motion } from "framer-motion";
+import { motion, useScroll  } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+// import { useEffect } from "react";
+// import ParallaxText from "./ParallaxText";
+
 function HomePage() {
+  // const { scrollYProgress } = useScroll()
+  const scrollRef = useRef(null);
+
+  // const scrollRight = () => {
+  //   if (scrollRef.current) {
+  //     scrollRef.current.scrollBy({
+  //       left: 100 , // Adjust this value to scroll more or less
+  //       behavior: 'smooth', // Smooth scrolling animation
+  //     });
+  //   }
+  // };
+
+  
   return (
     <>
-      <div className=" px-36 pt-24 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
+      <div  className=" px-36 pt-24 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
         <div className="w-full h-full justify-start flex">
           {/* Left half introduction */}
-          <div className="w-1/2 fixed">
+          <div className="w-1/2 fixed ">
             {/* name */}
-            <div className="text-portfolio-lightest text-5xl mb-3 flex flex-col space-y-3 font-black">
+            <div className="text-portfolio-lightest  text-5xl mb-3 flex flex-col space-y-3 font-black">
               <img
                 className="w-16 animate-bounce h-16 object-cover rounded-full drop-shadow-md ring-2 ring-portfolio-lightest"
                 src="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/2.0profile.png?alt=media&token=de6a5824-0e95-47a5-a0ed-6fa78bcddfa7"
@@ -25,6 +43,9 @@ function HomePage() {
             <div className="text-portfolio-lighter text-md w-1/2 mb-12 font-medium">
               I build seamless and accessible digital experiences.
             </div>
+            {/* <ParallaxText baseVelocity={-5} >Framer Motion</ParallaxText> */}
+
+            
 
             {/* navigations */}
             <div className=" flex flex-col space-y-3">
@@ -43,7 +64,9 @@ function HomePage() {
           </div>
 
           {/* right half */}
-          <div className="w-1/2 ml-[50%]">
+          <div  className="w-1/2 ml-[50%]">
+          
+          
             {/* about description */}
             <div className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
@@ -71,19 +94,19 @@ function HomePage() {
             {/* Experience */}
             <div className="  ">
               {/* card kind of thing for each experience */}
-              <div className="card hover:bg-white/5 p-2 rounded-sm hover:ring-1 hover:ring-portfolio-light hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              <motion.div  initial={{opacity:0, y:20}} whileHover={{scale:1.02}}   whileInView={{opacity:1, y:0, transition:{duration:1}}} className="card hover:bg-white/5 p-2 rounded-sm hover:ring-1 hover:ring-portfolio-light hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
               <a target="_blank" className="flex items-start " href="https://www.hsc.com/">
                 <div className="text-portfolio-lightest mt-1 min-w-[150px] text-xs font-bold">AUG 2023 - PRESENT</div>
                 <div>
-                  <div className="text-portfolio-lightest font-semibold mb-2">Software Engineer (T0) | <span className=" text-portfolio-lightest font-semibold">Hughes Systique Corporation </span></div>
+                  <div  className="text-portfolio-lightest font-semibold mb-2">Software Engineer (T0) | <span className=" text-portfolio-lightest font-semibold">Hughes Systique Corporation </span></div>
                   <div className="text-sm text-portfolio-lighter">
                   Ideated and developed a RAG solution with 3GPP specifications and the front-end UI for an in-house chatbot application. Specifically, responsible for developing the user interface and backend of the application. Successfully implemented the user interface, which is utilized by more than 100 employees. Additionally, and won the bronze medal in a global ITU Competition for the RAG solution.
 
                   </div>
                 </div>
                 </a>
-              </div>
-              <div className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm  hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              </motion.div>
+              <motion.div initial={{opacity:0, y:20}}  whileHover={{scale:1.02}}  whileInView={{opacity:1, y: 0, transition:{duration:1, delay:0.1}}} className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm  hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
               <a target="_blank" className="flex items-start " href="https://www.hsc.com/">
                 <div className="text-portfolio-lightest mt-1   min-w-[150px]  text-xs font-bold">JAN 2023 - AUG 2023</div>
                 <div>
@@ -94,8 +117,8 @@ function HomePage() {
                   </div>
                 </div>
                 </a>
-              </div>
-              <motion.div initial={{opacity:0, y:20}}    whileInView={{opacity:1, y:0, transition:{duration:1.5}}} className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              </motion.div>
+              <motion.div initial={{opacity:0, y:20}} whileHover={{scale:1.02}}   whileInView={{opacity:1, y:0, transition:{duration:1, delay:0.2}}} className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
               <a target="_blank" className="flex items-start " href="https://www.learnemp.in/">
                 <div className="text-portfolio-lightest mt-1   min-w-[150px]  text-xs font-bold">JAN 2022 - APR 2022</div>
                 <div>
@@ -107,6 +130,23 @@ function HomePage() {
                 </div>
                 </a>
               </motion.div>
+
+              <motion.div ref={scrollRef}   className="div w-full flex items-center space-x-5 overflow-x-scroll mb-10">
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+                <div className="w-24 bg-slate-50 h-24 flex-shrink-0"></div>
+
+                
+
+              </motion.div>
+             
             </div>
 
           </div>
