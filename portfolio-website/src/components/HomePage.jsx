@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 function HomePage() {
   return (
     <>
@@ -94,7 +95,7 @@ function HomePage() {
                 </div>
                 </a>
               </div>
-              <div className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
+              <motion.div initial={{opacity:0, y:20}}    whileInView={{opacity:1, y:0, transition:{duration:1.5}}} className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10">
               <a target="_blank" className="flex items-start " href="https://www.learnemp.in/">
                 <div className="text-portfolio-lightest mt-1   min-w-[150px]  text-xs font-bold">JAN 2022 - APR 2022</div>
                 <div>
@@ -105,7 +106,7 @@ function HomePage() {
                   </div>
                 </div>
                 </a>
-              </div>
+              </motion.div>
             </div>
 
           </div>
