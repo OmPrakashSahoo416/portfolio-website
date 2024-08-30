@@ -50,14 +50,16 @@ function HomePage() {
             {/* <ParallaxText baseVelocity={-5} >Framer Motion</ParallaxText> */}
 
             {/* navigations */}
-            <div className=" flex flex-col space-y-3">
+            <div className=" flex flex-col space-y-5 text-portfolio-lightest items-start">
               {/* about */}
+              <button onClick={() => document.getElementById("about").scrollIntoView({behavior:"smooth"})}>About</button>
 
               {/* experience */}
+              <button onClick={() => document.getElementById("experience").scrollIntoView({behavior:"smooth"})}>Experience</button>
 
               {/* project */}
-
-              {/* contact */}
+              <button onClick={() => document.getElementById("project").scrollIntoView({behavior:"smooth"})}>Projects</button>
+             
 
               {/* get resume */}
             </div>
@@ -66,7 +68,7 @@ function HomePage() {
           {/* right half */}
           <div className="w-1/2 ml-[50%] ">
             {/* about description */}
-            <div className="text-portfolio-lighter mb-24">
+            <div id="about" className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
               Center of Excellence (CoE) team at{" "}
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
@@ -103,7 +105,7 @@ function HomePage() {
             </div>
 
             {/* Experience */}
-            <div className="  mb-24">
+            <div id="experience" className="  mb-24">
               {/* card kind of thing for each experience */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -220,7 +222,7 @@ function HomePage() {
             </div>
 
             {/* Projects */}
-            <div>
+            <div id="project">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileHover={{ scale: 1.03 }}
@@ -391,55 +393,7 @@ function HomePage() {
                 </div>
               </motion.div>
 
-              {/* contact form */}
-              <section className="">
-                <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                  <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-portfolio-lightest">{`Let's connect`}</h2>
-
-                  <form
-                    action="mailto:omprakashsahoo1234@gmail.com"
-                    className="space-y-8"
-                    
-                  >
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block mb-2 text-sm font-medium text-portfolio-lighter "
-                      >
-                        Your email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="shadow-sm font-bold  border border-portfolio-light-300 text-portfolio-bg placeholder:text-portfolio-lighter text-sm rounded-lg focus:outline-none block w-full p-2.5 "
-                        placeholder="name@email.com"
-                        required
-                      />
-                    </div>
-
-                    <div className="sm:col-span-2">
-                      <label
-                        htmlFor="message"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-                      >
-                        Your message
-                      </label>
-                      <textarea
-                        id="message"
-                        rows="6"
-                        className="shadow-sm font-bold  border border-portfolio-light-300 text-portfolio-bg placeholder:text-portfolio-lighter text-sm rounded-lg focus:outline-none block w-full p-2.5"
-                        placeholder="Leave a message..."
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      className="bg-portfolio-lightest p-2 rounded-md text-portfolio-light hover:bg-portfolio-light hover:shadow-inner hover:text-portfolio-lightest"
-                    >
-                      Send message
-                    </button>
-                  </form>
-                </div>
-              </section>
+              <motion.button whileTap={{scale:0.8}} className="p-3 rounded-sm hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 text-portfolio-lightest" onClick={() => window.location.href="mailto:omprakashsahoo1234@gmail.com"}>{`Let's connect`}</motion.button>
             </div>
           </div>
         </div>
