@@ -27,7 +27,7 @@ function HomePage() {
       <div className=" px-36 pt-24 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
         <div className="w-full h-full  justify-start flex ">
           {/* Left half introduction */}
-          <div className="w-1/2 fixed ">
+          <div className="w-1/2 fixed">
             {/* name */}
             <div className="text-portfolio-lightest  text-5xl mb-3 flex flex-col space-y-3 font-black">
               <img
@@ -90,8 +90,8 @@ function HomePage() {
               fusion of development and AI keeps me at the forefront of
               technological advancements.<br></br>
               <br></br>I hold a B. Tech in Electrical Engineering from{" "}
-              <span className=" text-portfolio-lightest font-semibold">
-                Odisha University of Technology and Research
+              <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
+                <a href="https://outr.ac.in/">Odisha University of Technology and Research</a>{" "}
               </span>
               , graduating in 2023. My academic foundation equips me with strong
               problem-solving and technical skills, which I continually apply in
@@ -215,7 +215,6 @@ function HomePage() {
                 </a>
               </motion.div>
               <br></br>
-              
             </div>
 
             {/* Projects */}
@@ -239,15 +238,17 @@ function HomePage() {
                     </div>
                     <div className="flex items-center space-x-5">
                       <motion.a
-                      initial={{ scale:1 }}
-                      whileHover={{ scale: 1.5 }}
-                      transition={{duration:0.20}}
-                       href="https://github.com/OmPrakashSahoo416/Productivity-Full-Stack">
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.2 }}
+                        href="https://github.com/OmPrakashSahoo416/Productivity-Full-Stack"
+                      >
                         <Github className="text-slate-50"></Github>
                       </motion.a>
-                      <motion.a initial={{ scale:1 }}
-                      whileHover={{ scale: 1.5 }}
-                      transition={{duration:0.20}}
+                      <motion.a
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.2 }}
                         target="_blank"
                         className="flex items-start "
                         href="https://productivity-full-stack.vercel.app/"
@@ -271,6 +272,119 @@ function HomePage() {
                     enhanced project management with customizable and
                     user-friendly features, accessible online offering seamless
                     collaboration.
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileHover={{ scale: 1.04 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 1, delay: 0.1 },
+                }}
+                className={
+                  "card bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                }
+              >
+                <div className="flex flex-col justify-center">
+                  <div className="flex  justify-between">
+                    <div className="text-portfolio-lightest font-semibold mb-2">
+                      CollabCode: Real-Time Multi-User Code Collaboration
+                      Platform
+                    </div>
+                    <div className="flex items-center space-x-5">
+                      <motion.a
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.2 }}
+                        href="https://github.com/OmPrakashSahoo416/code-editor"
+                      >
+                        <Github className="text-slate-50"></Github>
+                      </motion.a>
+                      <motion.a
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.2 }}
+                        target="_blank"
+                        className="flex items-start "
+                        href="https://code-editor-cfd80.web.app/"
+                      >
+                        <ExternalLink className="text-slate-50"></ExternalLink>
+                      </motion.a>
+                    </div>
+                  </div>
+                  <img
+                    className="rounded-md my-3"
+                    src="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/collabcode.png?alt=media&token=d546044e-1b2c-42bb-83e6-f0d50509f755"
+                    alt=""
+                  />
+                  <div className="text-sm text-portfolio-lighter">
+                    Developed CollabCode, that enables real-time multi-user
+                    editing in dedicated rooms, facilitating seamless remote
+                    collaboration. Engineered using React for the frontend,
+                    Express.js for the backend, and integrated Socket.io for
+                    real-time updates. Utilized Google Firebase for database
+                    management and a custom REST API for room management. App
+                    allows streamlined collaborative coding by allowing teams to
+                    work on the same file simultaneously, enhancing efficiency
+                    in remote environments.
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileHover={{ scale: 1.05 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 1, delay: 0.1 },
+                }}
+                className={
+                  "card bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                }
+              >
+                <div className="flex flex-col justify-center">
+                  <div className="flex  justify-between">
+                    <div className="text-portfolio-lightest font-semibold mb-2">
+                      PureNote: Comprehensive Notes Management Web Application
+                    </div>
+                    <div className="flex items-center space-x-5">
+                      <motion.a
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.2 }}
+                        href="https://github.com/OmPrakashSahoo416/PureNotes"
+                      >
+                        <Github className="text-slate-50"></Github>
+                      </motion.a>
+                      <motion.a
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.5 }}
+                        transition={{ duration: 0.2 }}
+                        target="_blank"
+                        className="flex items-start "
+                        href="https://notes-app-185ca.web.app/"
+                      >
+                        <ExternalLink className="text-slate-50"></ExternalLink>
+                      </motion.a>
+                    </div>
+                  </div>
+                  <img
+                    className="rounded-md my-3"
+                    src="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/purenotes.png?alt=media&token=5b0470b7-5361-483b-8bdd-b530d6c0dccd"
+                    alt=""
+                  />
+                  <div className="text-sm text-portfolio-lighter">
+                    Developed Pure Note, a comprehensive notes management web
+                    application with features like note creation, reminders,
+                    canvas drawing, file storage, and focus timers. Built using
+                    React, Redux, and Firebase, with additional tools like
+                    Framer Motion for animations and Tailwind CSS for responsive
+                    design. Implemented user authentication via Google and
+                    integrated a focus time leader board. Successfully deployed
+                    Pure Note, providing users with a versatile and interactive
+                    platform for managing their tasks and notes.
                   </div>
                 </div>
               </motion.div>
