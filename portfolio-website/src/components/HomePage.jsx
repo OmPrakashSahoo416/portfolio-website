@@ -91,7 +91,9 @@ function HomePage() {
               technological advancements.<br></br>
               <br></br>I hold a B. Tech in Electrical Engineering from{" "}
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
-                <a href="https://outr.ac.in/">Odisha University of Technology and Research</a>{" "}
+                <a href="https://outr.ac.in/">
+                  Odisha University of Technology and Research
+                </a>{" "}
               </span>
               , graduating in 2023. My academic foundation equips me with strong
               problem-solving and technical skills, which I continually apply in
@@ -388,6 +390,56 @@ function HomePage() {
                   </div>
                 </div>
               </motion.div>
+
+              {/* contact form */}
+              <section className="">
+                <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                  <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-portfolio-lightest">{`Let's connect`}</h2>
+
+                  <form
+                    action="mailto:omprakashsahoo1234@gmail.com"
+                    className="space-y-8"
+                    
+                  >
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block mb-2 text-sm font-medium text-portfolio-lighter "
+                      >
+                        Your email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="shadow-sm font-bold  border border-portfolio-light-300 text-portfolio-bg placeholder:text-portfolio-lighter text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+                        placeholder="name@email.com"
+                        required
+                      />
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <label
+                        htmlFor="message"
+                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+                      >
+                        Your message
+                      </label>
+                      <textarea
+                        id="message"
+                        rows="6"
+                        className="shadow-sm font-bold  border border-portfolio-light-300 text-portfolio-bg placeholder:text-portfolio-lighter text-sm rounded-lg focus:outline-none block w-full p-2.5"
+                        placeholder="Leave a message..."
+                      ></textarea>
+                    </div>
+                    <button
+                      type="submit"
+                      className="bg-portfolio-lightest p-2 rounded-md text-portfolio-light hover:bg-portfolio-light hover:shadow-inner hover:text-portfolio-lightest"
+                    >
+                      Send message
+                    </button>
+                  </form>
+                </div>
+              </section>
             </div>
           </div>
         </div>
