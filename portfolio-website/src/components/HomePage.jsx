@@ -10,17 +10,10 @@ import { ExternalLink, Github } from "lucide-react";
 // import ParallaxText from "./ParallaxText";
 
 function HomePage() {
-  // const { scrollYProgress } = useScroll()
-  // const scrollRef = useRef(null);
 
-  // const scrollRight = () => {
-  //   if (scrollRef.current) {
-  //     scrollRef.current.scrollBy({
-  //       left: 100 , // Adjust this value to scroll more or less
-  //       behavior: 'smooth', // Smooth scrolling animation
-  //     });
-  //   }
-  // };
+  let infocus = false;
+  console.log(infocus)
+  
 
   return (
     <>
@@ -50,15 +43,23 @@ function HomePage() {
             {/* <ParallaxText baseVelocity={-5} >Framer Motion</ParallaxText> */}
 
             {/* navigations */}
-            <div className=" flex flex-col space-y-5 text-portfolio-lightest items-start">
+            <div className=" flex flex-col space-y-2 text-portfolio-lightest items-start">
               {/* about */}
-              <button onClick={() => document.getElementById("about").scrollIntoView({behavior:"smooth"})}>About</button>
+              <motion.button className="p-3" animate={{scale:infocus?1.2:1}} whileHover={{
+                scale:1.2
+              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("about").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>About</motion.button>
 
               {/* experience */}
-              <button onClick={() => document.getElementById("experience").scrollIntoView({behavior:"smooth"})}>Experience</button>
+              <motion.button className="p-3" whileHover={{
+                scale:1.2
+              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("experience").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>Experience</motion.button>
 
               {/* project */}
-              <button onClick={() => document.getElementById("project").scrollIntoView({behavior:"smooth"})}>Projects</button>
+              <motion.button className="p-3" whileHover={{
+                scale:1.2
+              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("project").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>Projects</motion.button>
+
+              <button className="text-portfolio-bg bg-portfolio-lightest p-3 rounded-md"><a href="">Get resume</a></button>
              
 
               {/* get resume */}
@@ -68,7 +69,7 @@ function HomePage() {
           {/* right half */}
           <div className="w-1/2 ml-[50%] ">
             {/* about description */}
-            <div id="about" className="text-portfolio-lighter mb-24">
+            <motion.div  id="about"  className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
               Center of Excellence (CoE) team at{" "}
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
@@ -102,7 +103,7 @@ function HomePage() {
               my professional journey.
               <br></br>
               <br></br>
-            </div>
+            </motion.div>
 
             {/* Experience */}
             <div id="experience" className="  mb-24">
@@ -393,7 +394,7 @@ function HomePage() {
                 </div>
               </motion.div>
 
-              <motion.button whileTap={{scale:0.8}} className="p-3 rounded-sm hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 text-portfolio-lightest" onClick={() => window.location.href="mailto:omprakashsahoo1234@gmail.com"}>{`Let's connect`}</motion.button>
+              <motion.button whileTap={{scale:0.8}} className="p-3 rounded-md hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 text-portfolio-lightest" onClick={() => window.location.href="mailto:omprakashsahoo1234@gmail.com"}>{`Let's connect`}</motion.button>
             </div>
           </div>
         </div>
