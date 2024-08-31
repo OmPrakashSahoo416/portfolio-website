@@ -474,7 +474,7 @@ function HomePage() {
 
               <motion.button
                 whileTap={{ scale: 0.8 }}
-                className="p-3 rounded-md hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 text-portfolio-lightest"
+                className="p-3 rounded-md hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 w-full text-portfolio-lightest"
                 onClick={() =>
                   (window.location.href = "mailto:omprakashsahoo1234@gmail.com")
                 }
