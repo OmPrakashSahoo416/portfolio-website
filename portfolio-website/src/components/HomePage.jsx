@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Dot, ExternalLink, Github, Linkedin } from "lucide-react";
 
 // import {  useRef } from "react";
 {
@@ -10,13 +10,28 @@ import { ExternalLink, Github } from "lucide-react";
 // import ParallaxText from "./ParallaxText";
 
 function HomePage() {
-
-  let infocus = false;
-  console.log(infocus)
-  
-
   return (
     <>
+      {/* Links */}
+      <div className="flex p-1 flex-col space-y-1 items-center fixed w-12  top-1/2 bg-portfolio-lightest rounded-sm">
+
+        <motion.a whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }} href="https://www.linkedin.com/in/om-prakash-sahoo-166715204/" target="_blank">
+          <Linkedin className="bg-portfolio-bg shadow-sm text-portfolio-lightest rounded-sm w-10 p-2 h-10"></Linkedin>
+        </motion.a>
+
+        <motion.a whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }} target="_blank" href="https://github.com/OmPrakashSahoo416">
+          <Github className="bg-portfolio-bg shadow-sm text-portfolio-lightest rounded-sm w-10 p-2 h-10"></Github>
+        </motion.a>
+      </div>
+
       <div className=" px-36 pt-24 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
         <div className="w-full h-full  justify-start flex ">
           {/* Left half introduction */}
@@ -45,37 +60,98 @@ function HomePage() {
             {/* navigations */}
             <div className=" flex flex-col space-y-2 text-portfolio-lightest items-start">
               {/* about */}
-              <motion.button className="p-3 focus:font-bold" animate={{scale:infocus?1.2:1}} whileHover={{
-                scale:1.2
-              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("about").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>About</motion.button>
+              <motion.button
+                className="p-2 group flex items-center focus:font-bold"
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                onClick={() =>
+                  document
+                    .getElementById("about")
+                    .scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "nearest",
+                    })
+                }
+              >
+                {" "}
+                <Dot className="w-10 h-10 hidden group-focus:block" /> About
+              </motion.button>
 
               {/* experience */}
-              <motion.button className="p-3 focus:font-bold " whileHover={{
-                scale:1.2
-              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("experience").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>Experience</motion.button>
+              <motion.button
+                className="p-2 group flex items-center focus:font-bold "
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                onClick={() =>
+                  document
+                    .getElementById("experience")
+                    .scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                      inline: "nearest",
+                    })
+                }
+              >
+                <Dot className="w-10 h-10 hidden group-focus:block" />
+                Experience
+              </motion.button>
 
               {/* project */}
-              <motion.button className="p-3 focus:font-bold" whileHover={{
-                scale:1.2
-              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("project").scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})}>Projects</motion.button>
-
-              <motion.button whileHover={{
-                scale:1.2
-              }} whileTap={{scale:0.8}} transition={{duration:0.2}} className="text-portfolio-bg mb-12 bg-portfolio-lightest p-3 rounded-md"><a href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/omprakashsahooresume.pdf?alt=media&token=79391b03-8810-4c6c-9e2b-2dabe07c5022" target="_blank">Get resume</a></motion.button>
-             
+              <motion.button
+                className="p-2 group flex items-center focus:font-bold"
+                whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                onClick={() =>
+                  document
+                    .getElementById("project")
+                    .scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                      inline: "nearest",
+                    })
+                }
+              >
+                <Dot className="w-10 h-10 hidden group-focus:block" />
+                Projects
+              </motion.button>
 
               {/* get resume */}
+              <motion.button
+                whileHover={{
+                  scale: 1.2,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                className="text-portfolio-bg mb-12 bg-portfolio-lightest p-3 rounded-md"
+              >
+                <a
+                  href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/omprakashsahooresume.pdf?alt=media&token=79391b03-8810-4c6c-9e2b-2dabe07c5022"
+                  target="_blank"
+                >
+                  Get resume
+                </a>
+              </motion.button>
             </div>
           </div>
 
           {/* right half */}
           <div className="w-1/2 ml-[50%] ">
             {/* about description */}
-            <motion.div  id="about"  className="text-portfolio-lighter mb-24">
+            <motion.div id="about" className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
               Center of Excellence (CoE) team at{" "}
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
-                <a href="https://www.hsc.com/">Hughes Systique Corporation</a>
+                <a href="https://www.hsc.com/" target="_blank">Hughes Systique Corporation</a>
               </span>
               , where we drive innovation through dedicated research and
               development. My expertise lies in{" "}
@@ -96,7 +172,7 @@ function HomePage() {
               technological advancements.<br></br>
               <br></br>I hold a B. Tech in Electrical Engineering from{" "}
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
-                <a href="https://outr.ac.in/">
+                <a href="https://outr.ac.in/" target="_blank">
                   Odisha University of Technology and Research
                 </a>
               </span>
@@ -119,7 +195,7 @@ function HomePage() {
                 <a
                   target="_blank"
                   className="flex items-start "
-                  href="https://www.hsc.com/"
+                  href="https://www.hsc.com/" 
                 >
                   <div className="text-portfolio-lightest mt-1 min-w-[150px] text-xs font-bold">
                     AUG 2023 - PRESENT
@@ -396,7 +472,13 @@ function HomePage() {
                 </div>
               </motion.div>
 
-              <motion.button whileTap={{scale:0.8}} className="p-3 rounded-md hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 text-portfolio-lightest" onClick={() => window.location.href="mailto:omprakashsahoo1234@gmail.com"}>{`Let's connect`}</motion.button>
+              <motion.button
+                whileTap={{ scale: 0.8 }}
+                className="p-3 rounded-md hover:bg-portfolio-lightest hover:text-portfolio-bg border-2 border-portfolio-lightest mb-32 text-portfolio-lightest"
+                onClick={() =>
+                  (window.location.href = "mailto:omprakashsahoo1234@gmail.com")
+                }
+              >{`Let's connect`}</motion.button>
             </div>
           </div>
         </div>
