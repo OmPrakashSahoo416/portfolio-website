@@ -45,21 +45,23 @@ function HomePage() {
             {/* navigations */}
             <div className=" flex flex-col space-y-2 text-portfolio-lightest items-start">
               {/* about */}
-              <motion.button className="p-3" animate={{scale:infocus?1.2:1}} whileHover={{
+              <motion.button className="p-3 focus:font-bold" animate={{scale:infocus?1.2:1}} whileHover={{
                 scale:1.2
               }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("about").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>About</motion.button>
 
               {/* experience */}
-              <motion.button className="p-3" whileHover={{
+              <motion.button className="p-3 focus:font-bold " whileHover={{
                 scale:1.2
               }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("experience").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>Experience</motion.button>
 
               {/* project */}
-              <motion.button className="p-3" whileHover={{
+              <motion.button className="p-3 focus:font-bold" whileHover={{
                 scale:1.2
-              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("project").scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"})}>Projects</motion.button>
+              }} whileTap={{scale:0.8}} transition={{duration:0.2}} onClick={() => document.getElementById("project").scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"})}>Projects</motion.button>
 
-              <button className="text-portfolio-bg bg-portfolio-lightest p-3 rounded-md"><a href="">Get resume</a></button>
+              <motion.button whileHover={{
+                scale:1.2
+              }} whileTap={{scale:0.8}} transition={{duration:0.2}} className="text-portfolio-bg mb-12 bg-portfolio-lightest p-3 rounded-md"><a href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/omprakashsahooresume.pdf?alt=media&token=79391b03-8810-4c6c-9e2b-2dabe07c5022" target="_blank">Get resume</a></motion.button>
              
 
               {/* get resume */}
@@ -73,7 +75,7 @@ function HomePage() {
               With over a year of experience, I currently contribute to the
               Center of Excellence (CoE) team at{" "}
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
-                <a href="https://www.hsc.com/">Hughes Systique Corporation</a>{" "}
+                <a href="https://www.hsc.com/">Hughes Systique Corporation</a>
               </span>
               , where we drive innovation through dedicated research and
               development. My expertise lies in{" "}
@@ -96,7 +98,7 @@ function HomePage() {
               <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
                 <a href="https://outr.ac.in/">
                   Odisha University of Technology and Research
-                </a>{" "}
+                </a>
               </span>
               , graduating in 2023. My academic foundation equips me with strong
               problem-solving and technical skills, which I continually apply in
