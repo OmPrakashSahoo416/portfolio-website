@@ -1,5 +1,9 @@
-import { motion } from "framer-motion";
-import { Dot, ExternalLink, Github, Linkedin } from "lucide-react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { ExternalLink, Github, Linkedin, Minus } from "lucide-react";
+import { useState } from "react";
+import Typewriter from "./Typewriter";
+
+// import { useEffect } from "react";
 
 // import {  useRef } from "react";
 {
@@ -10,9 +14,30 @@ import { Dot, ExternalLink, Github, Linkedin } from "lucide-react";
 // import ParallaxText from "./ParallaxText";
 
 function HomePage() {
+
+  const { scrollY } = useScroll()
+
+  const [currScrollVal, setCurrScrollVal] = useState(0)
+
+  // scroll values for differernt sections
+  const scrollVals = [0,528,1340]
+
+useMotionValueEvent(scrollY, "change", (latest) => {
+  console.log("Page scroll: ", latest)
+  // real time updating the scroll value
+  setCurrScrollVal(latest)
+
+  // const element = document.getElementById("about");
+  // const scrollPosition = element.getBoundingClientRect().top + window.pageYOffset;
+  // console.log("Scroll about" + scrollPosition);
+})
+
+
+
   return (
     <>
       {/* Links */}
+      
       <div className="flex p-1 flex-col space-y-1 items-center fixed w-12  top-1/2 bg-portfolio-lightest rounded-sm">
 
         <motion.a whileHover={{
@@ -48,11 +73,11 @@ function HomePage() {
 
             {/* designation */}
             <div className="text-portfolio-lightest text-xl mb-6 font-semibold">
-              Software Engineer
+            <Typewriter />
             </div>
 
             {/* intro line */}
-            <div className="text-portfolio-lighter text-md w-1/2 mb-12 font-medium">
+            <div className="text-portfolio-lighter text-md w-2/3 mb-12 font-medium font-['Consolas']">
               I build seamless and accessible digital experiences.
             </div>
             {/* <ParallaxText baseVelocity={-5} >Framer Motion</ParallaxText> */}
@@ -61,12 +86,11 @@ function HomePage() {
             <div className=" flex flex-col space-y-2 text-portfolio-lightest items-start">
               {/* about */}
               <motion.button
-                className="p-2 group flex items-center focus:font-bold"
+                className={"p-2 group flex items-center  " + (currScrollVal >= scrollVals[0] && currScrollVal < scrollVals[1] ? " font-bold":" ")}
                 whileHover={{
                   scale: 1.05,
                 }}
                 whileTap={{ scale: 0.8 }}
-                transition={{ duration: 0.2 }}
                 onClick={() =>
                   document
                     .getElementById("about")
@@ -78,17 +102,17 @@ function HomePage() {
                 }
               >
                 {" "}
-                <Dot className="w-10 h-10 hidden group-focus:block" /> About
+                {currScrollVal >= scrollVals[0] && currScrollVal < scrollVals[1] ? <Minus />:" "}About
               </motion.button>
 
               {/* experience */}
               <motion.button
-                className="p-2 group flex items-center focus:font-bold "
+                className={"p-2 group flex items-center  " + (currScrollVal >= scrollVals[1] && currScrollVal < scrollVals[2] ? " font-bold":" ")}
                 whileHover={{
                   scale: 1.05,
                 }}
                 whileTap={{ scale: 0.8 }}
-                transition={{ duration: 0.2 }}
+                
                 onClick={() =>
                   document
                     .getElementById("experience")
@@ -99,18 +123,16 @@ function HomePage() {
                     })
                 }
               >
-                <Dot className="w-10 h-10 hidden group-focus:block" />
-                Experience
+                {currScrollVal >= scrollVals[1] && currScrollVal < scrollVals[2] ? <Minus />:" "}Experience
               </motion.button>
 
               {/* project */}
               <motion.button
-                className="p-2 group flex items-center focus:font-bold"
+                className={"p-2 group flex items-center  " + (currScrollVal >= scrollVals[2] ? " font-bold":" ")}
                 whileHover={{
                   scale: 1.05,
                 }}
                 whileTap={{ scale: 0.8 }}
-                transition={{ duration: 0.2 }}
                 onClick={() =>
                   document
                     .getElementById("project")
@@ -121,8 +143,7 @@ function HomePage() {
                     })
                 }
               >
-                <Dot className="w-10 h-10 hidden group-focus:block" />
-                Projects
+                {currScrollVal >= scrollVals[2] ? <Minus />:" "}Projects
               </motion.button>
 
               {/* get resume */}
@@ -150,19 +171,19 @@ function HomePage() {
             <motion.div id="about" className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
               Center of Excellence (CoE) team at{" "}
-              <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
+              <span className="hover:cursor-pointer font-['Consolas'] hover:underline text-portfolio-lightest font-semibold">
                 <a href="https://www.hsc.com/" target="_blank">Hughes Systique Corporation</a>
               </span>
               , where we drive innovation through dedicated research and
               development. My expertise lies in{" "}
-              <span className=" text-portfolio-lightest font-semibold">
+              <span className=" text-portfolio-lightest font-['Consolas'] font-semibold">
                 full stack development
               </span>{" "}
               and backend technologies like Firebase and NodeJS, enabling me to
               build robust, user-friendly applications. <br></br>
               <br></br>
               Beyond development, I explore{" "}
-              <span className=" text-portfolio-lightest font-semibold">
+              <span className=" text-portfolio-lightest font-['Consolas'] font-semibold">
                 deep learning
               </span>{" "}
               projects, working on cutting-edge technologies like depth
@@ -171,7 +192,7 @@ function HomePage() {
               fusion of development and AI keeps me at the forefront of
               technological advancements.<br></br>
               <br></br>I hold a B. Tech in Electrical Engineering from{" "}
-              <span className="hover:cursor-pointer hover:underline text-portfolio-lightest font-semibold">
+              <span className="hover:cursor-pointer hover:underline font-['Consolas'] text-portfolio-lightest font-semibold">
                 <a href="https://outr.ac.in/" target="_blank">
                   Odisha University of Technology and Research
                 </a>
@@ -202,13 +223,13 @@ function HomePage() {
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex space-x-2">
-                      <div className="text-portfolio-lightest font-semibold mb-2">
+                      <div className="text-portfolio-lightest font-['Consolas'] font-semibold mb-2">
                         Software Engineer (T0) |{" "}
                         <span className=" text-portfolio-lightest font-semibold">
                           Hughes Systique Corporation{" "}
                         </span>
                       </div>
-                      <ExternalLink className="text-slate-50 w-4 h-4 group-hover:translate-x-5 group-hover:-translate-y-2" />
+                      <ExternalLink className="text-slate-50 w-4 h-4 group-hover:translate-x-3 group-hover:-translate-y-2" />
                     </div>
                     <div className="text-sm text-portfolio-lighter">
                       Ideated and developed a RAG solution with 3GPP
@@ -243,7 +264,7 @@ function HomePage() {
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex space-x-2">
-                      <div className="text-portfolio-lightest font-semibold mb-2">
+                      <div className="text-portfolio-lightest font-['Consolas'] font-semibold mb-2">
                         Software Engineer Trainee |{" "}
                         <span className="text-portfolio-lightest font-semibold">
                           Hughes Systique Corporation{" "}
@@ -280,7 +301,7 @@ function HomePage() {
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex space-x-2">
-                      <div className="text-portfolio-lightest font-semibold mb-2">
+                      <div className="text-portfolio-lightest font-['Consolas'] font-semibold mb-2">
                         Game Design and Development Intern |{" "}
                         <span className="text-portfolio-lightest font-semibold">
                           Learn and Empower Private Ltd{" "}
