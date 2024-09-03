@@ -57,14 +57,14 @@ useMotionValueEvent(scrollY, "change", (latest) => {
         </motion.a>
       </div>
 
-      <div className=" px-36 pt-24 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
-        <div className="w-full h-full  justify-start flex ">
+      <div className=" lg:px-36 px-10 lg:pt-24 pt-12 min-h-screen h-fit bg-portfolio-bg font-['Roboto']">
+        <div className="w-full h-full sm:flex-col lg:flex-row sm:justify-center  lg:justify-start flex ">
           {/* Left half introduction */}
-          <div className="w-1/2 fixed">
+          <div className="lg:w-1/2 w-full lg:fixed">
             {/* name */}
-            <div className="text-portfolio-lightest  text-5xl mb-3 flex flex-col space-y-3 font-black">
+            <div className="text-portfolio-lightest  text-5xl mb-3 flex flex-col lg:items-start items-center space-y-3 font-black">
               <img
-                className="w-16 animate-bounce h-16 object-cover rounded-full drop-shadow-md ring-2 ring-portfolio-lightest"
+                className="w-16 lg:animate-bounce h-16 object-cover rounded-full drop-shadow-md ring-2 ring-portfolio-lightest"
                 src="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/2.0profile.png?alt=media&token=de6a5824-0e95-47a5-a0ed-6fa78bcddfa7"
                 alt=""
               />
@@ -72,21 +72,21 @@ useMotionValueEvent(scrollY, "change", (latest) => {
             </div>
 
             {/* designation */}
-            <div className="text-portfolio-lightest text-xl mb-6 font-semibold">
+            <div className="text-portfolio-lightest text-center lg:text-left text-xl mb-6 font-semibold">
             <Typewriter />
             </div>
 
             {/* intro line */}
-            <div className="text-portfolio-lighter text-md w-2/3 mb-12 font-medium font-['Consolas']">
+            <div className="text-portfolio-lighter text-md lg:w-2/3 w-full lg:mb-12 mb-3 lg:text-left text-center font-medium font-['Consolas']">
               I build seamless and accessible digital experiences.
             </div>
             {/* <ParallaxText baseVelocity={-5} >Framer Motion</ParallaxText> */}
 
             {/* navigations */}
-            <div className=" flex flex-col space-y-2 text-portfolio-lightest items-start">
+            <div className=" flex flex-col space-y-2 text-portfolio-lightest items-center lg:items-start">
               {/* about */}
               <motion.button
-                className={"p-2 group flex items-center  " + (currScrollVal >= scrollVals[0] && currScrollVal < scrollVals[1] ? " font-bold":" ")}
+                className={"p-2 hidden group lg:flex items-center  " + (currScrollVal >= scrollVals[0] && currScrollVal < scrollVals[1] ? " font-bold":" ")}
                 whileHover={{
                   scale: 1.05,
                 }}
@@ -107,7 +107,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
 
               {/* experience */}
               <motion.button
-                className={"p-2 group flex items-center  " + (currScrollVal >= scrollVals[1] && currScrollVal < scrollVals[2] ? " font-bold":" ")}
+                className={"p-2 hidden group lg:flex items-center  " + (currScrollVal >= scrollVals[1] && currScrollVal < scrollVals[2] ? " font-bold":" ")}
                 whileHover={{
                   scale: 1.05,
                 }}
@@ -128,7 +128,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
 
               {/* project */}
               <motion.button
-                className={"p-2 group flex items-center  " + (currScrollVal >= scrollVals[2] ? " font-bold":" ")}
+                className={"p-2 hidden group lg:flex items-center  " + (currScrollVal >= scrollVals[2] ? " font-bold":" ")}
                 whileHover={{
                   scale: 1.05,
                 }}
@@ -166,7 +166,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
           </div>
 
           {/* right half */}
-          <div className="w-1/2 ml-[50%] ">
+          <div className="lg:w-1/2 mt-10 lg:mt-0 w-full text-justify lg:text-left lg:ml-[50%] ">
             {/* about description */}
             <motion.div id="about" className="text-portfolio-lighter mb-24">
               With over a year of experience, I currently contribute to the
