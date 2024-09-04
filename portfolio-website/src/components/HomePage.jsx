@@ -156,7 +156,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                 className="text-portfolio-bg mb-12 bg-portfolio-lightest p-3 rounded-md"
               >
                 <a
-                  href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/omprakashsahooresume.pdf?alt=media&token=79391b03-8810-4c6c-9e2b-2dabe07c5022"
+                  href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/om_prakash_sahoo_resume.pdf?alt=media&token=80ad5d73-b2a8-4139-9f82-6cf64952893e"
                   target="_blank"
                 >
                   Get resume
