@@ -1,6 +1,6 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ExternalLink, Github, Linkedin, Minus } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Typewriter from "./Typewriter";
 
 // import { useEffect } from "react";
@@ -31,6 +31,18 @@ useMotionValueEvent(scrollY, "change", (latest) => {
   // const scrollPosition = element.getBoundingClientRect().top + window.pageYOffset;
   // console.log("Scroll about" + scrollPosition);
 })
+
+// useEffect(() => {
+
+//   document.addEventListener("mousemove", (event) => {
+//     const movingMouse = document.getElementById("moving")
+//     const {clientX, clientY} = event
+  
+//     movingMouse.style.transform = `translate(${clientX}px, ${clientY}px)`
+//   })
+ 
+// })
+
 
 
 
