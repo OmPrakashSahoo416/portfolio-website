@@ -11,12 +11,12 @@ function App() {
 
   return (
     
-        <div className="  w-full h-full">
-          <img src=""></img>
-          {/* <div id="moving" className="w-24 overflow-hidden h-24 rounded-full bg-yellow-50 absolute opacity-20 -z-1 shadow-2xl"></div> */}
+        <div className=" w-full h-full">
+          
 
 
           <HomePage></HomePage>
+          
         </div>
       
   )

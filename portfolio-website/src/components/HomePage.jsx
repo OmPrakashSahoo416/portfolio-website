@@ -32,16 +32,16 @@ useMotionValueEvent(scrollY, "change", (latest) => {
   // console.log("Scroll about" + scrollPosition);
 })
 
-// useEffect(() => {
+useEffect(() => {
 
-//   document.addEventListener("mousemove", (event) => {
-//     const movingMouse = document.getElementById("moving")
-//     const {clientX, clientY} = event
+  document.addEventListener("mousemove", (event) => {
+    const movingMouse = document.getElementById("moving")
+    const {clientX, clientY} = event
   
-//     movingMouse.style.transform = `translate(${clientX}px, ${clientY}px)`
-//   })
+    movingMouse.style.transform = `translate(${clientX - 400}px, ${clientY - 400}px)`
+  })
  
-// })
+})
 
 
 
@@ -49,6 +49,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
   return (
     <>
       {/* Links */}
+      
       
       <div className="flex z-10 p-1 flex-col space-y-1 items-center fixed w-12  top-1/2 bg-portfolio-lightest rounded-sm">
 
@@ -80,7 +81,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                 src="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/2.0profile.png?alt=media&token=de6a5824-0e95-47a5-a0ed-6fa78bcddfa7"
                 alt=""
               />
-              <p>Om Prakash Sahoo</p>
+              <p className=" ">Om Prakash Sahoo</p>
             </div>
 
             {/* designation */}
@@ -223,7 +224,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                 initial={{ opacity: 0, y: 20 }}
                 whileHover={{ scale: 1.02 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                className="card hover:bg-white/5 p-2 rounded-sm hover:ring-1 group hover:ring-portfolio-light hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                className="card group hover:bg-white/5 p-2 rounded-sm hover:ring-1 group hover:ring-portfolio-light hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
               >
                 <a
                   target="_blank"
@@ -235,9 +236,9 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex space-x-2">
-                      <div className="text-portfolio-lightest font-['Consolas'] font-semibold mb-2">
+                      <div className="text-portfolio-lightest group-hover:text-slate-50 font-['Consolas'] font-semibold mb-2">
                         Software Engineer (T0) |{" "}
-                        <span className=" text-portfolio-lightest font-semibold">
+                        <span className=" text-portfolio-lightest group-hover:text-slate-50 font-semibold">
                           Hughes Systique Corporation{" "}
                         </span>
                       </div>
@@ -264,7 +265,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   y: 0,
                   transition: { duration: 1, delay: 0.1 },
                 }}
-                className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light group rounded-sm  hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                className="card group hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light group rounded-sm  hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
               >
                 <a
                   target="_blank"
@@ -276,9 +277,9 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex space-x-2">
-                      <div className="text-portfolio-lightest font-['Consolas'] font-semibold mb-2">
+                      <div className="text-portfolio-lightest group-hover:text-slate-50 font-['Consolas'] font-semibold mb-2">
                         Software Engineer Trainee |{" "}
-                        <span className="text-portfolio-lightest font-semibold">
+                        <span className="text-portfolio-lightest group-hover:text-slate-50 font-semibold">
                           Hughes Systique Corporation{" "}
                         </span>
                       </div>
@@ -301,7 +302,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   y: 0,
                   transition: { duration: 1, delay: 0.2 },
                 }}
-                className="card hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light group rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                className="card group hover:bg-white/5 p-2 hover:ring-1 hover:ring-portfolio-light group rounded-sm hover:shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
               >
                 <a
                   target="_blank"
@@ -313,9 +314,9 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   </div>
                   <div className="flex flex-col justify-center">
                     <div className="flex space-x-2">
-                      <div className="text-portfolio-lightest font-['Consolas'] font-semibold mb-2">
+                      <div className="text-portfolio-lightest group-hover:text-slate-50 font-['Consolas'] font-semibold mb-2">
                         Game Design and Development Intern |{" "}
-                        <span className="text-portfolio-lightest font-semibold">
+                        <span className="text-portfolio-lightest group-hover:text-slate-50 font-semibold">
                           Learn and Empower Private Ltd{" "}
                         </span>
                       </div>
@@ -344,12 +345,12 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   transition: { duration: 1, delay: 0.1 },
                 }}
                 className={
-                  "card bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                  "card group bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
                 }
               >
                 <div className="flex  flex-col justify-center">
                   <div className="flex space-x-2 justify-between">
-                    <div className="text-portfolio-lightest text-left  font-semibold mb-2">
+                    <div className="text-portfolio-lightest text-left group-hover:text-slate-50  font-semibold mb-2">
                       TaskWeave: Organization Management and Productivity App
                     </div>
                     <div className="flex items-center space-x-5">
@@ -400,12 +401,12 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   transition: { duration: 1, delay: 0.1 },
                 }}
                 className={
-                  "card bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                  "card group bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
                 }
               >
                 <div className="flex flex-col justify-center">
                   <div className="flex  justify-between">
-                    <div className="text-portfolio-lightest text-left  font-semibold mb-2">
+                    <div className="text-portfolio-lightest text-left group-hover:text-slate-50 font-semibold mb-2">
                       CollabCode: Real-Time Multi-User Code Collaboration
                       Platform
                     </div>
@@ -457,12 +458,12 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                   transition: { duration: 1, delay: 0.1 },
                 }}
                 className={
-                  "card bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
+                  "card group bg-white/5 p-2 ring-1 ring-portfolio-light group rounded-sm shadow-[2px_8px_20px_rgba(255,255,255,0.02)] mb-10"
                 }
               >
                 <div className="flex flex-col justify-center">
                   <div className="flex  justify-between">
-                    <div className="text-portfolio-lightest text-left  font-semibold mb-2">
+                    <div className="text-portfolio-lightest group-hover:text-slate-50 text-left  font-semibold mb-2">
                       PureNote: Comprehensive Notes Management Web Application
                     </div>
                     <div className="flex items-center space-x-5">
@@ -516,6 +517,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
           </div>
         </div>
       </div>
+      <div id="moving" className="w-[800px] blur-3xl  top-0 bg-portfolio-light fixed overflow-hidden h-[800px] rounded-full  opacity-20  pointer-events-none  -z-1 "></div>
     </>
   );
 }
