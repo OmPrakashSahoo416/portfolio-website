@@ -1,7 +1,10 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { ExternalLink, Github, Linkedin, Minus } from "lucide-react";
+import { Code, ExternalLink, Github, Linkedin, Minus } from "lucide-react";
+
 import { useEffect, useState } from "react";
 import Typewriter from "./Typewriter";
+import CIcon from "@coreui/icons-react";
+import { cibLeetcode } from "@coreui/icons";
 
 // import { useEffect } from "react";
 
@@ -67,6 +70,16 @@ useEffect(() => {
                 whileTap={{ scale: 0.8 }}
                 transition={{ duration: 0.2 }} target="_blank" href="https://github.com/OmPrakashSahoo416">
           <Github className="bg-portfolio-bg shadow-sm text-portfolio-lightest rounded-sm w-10 p-2 h-10"></Github>
+        </motion.a>
+
+        <motion.a whileHover={{
+                  scale: 1.05,
+                }}
+                whileTap={{ scale: 0.8 }}
+                transition={{ duration: 0.2 }} href="https://leetcode.com/u/omprakashsahoo1234/" target="_blank">
+          <Code className="bg-portfolio-bg shadow-sm text-portfolio-lightest rounded-sm w-10 p-2 h-10" />
+          {/* <i className="cib-leetcode"></i> */}
+          {/* <Linkedin className="bg-portfolio-bg shadow-sm text-portfolio-lightest rounded-sm w-10 p-2 h-10"></Linkedin> */}
         </motion.a>
       </div>
 
@@ -169,7 +182,7 @@ useEffect(() => {
                 className="text-portfolio-bg mb-12 bg-portfolio-lightest p-3 rounded-md"
               >
                 <a
-                  href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/om_prakash_sahoo_resume.pdf?alt=media&token=80ad5d73-b2a8-4139-9f82-6cf64952893e"
+                  href="https://firebasestorage.googleapis.com/v0/b/notes-app-185ca.appspot.com/o/om_prakash_sahoo_resume.pdf?alt=media&token=3ead9d2f-f311-4b3f-940a-de0ad8070593"
                   target="_blank"
                 >
                   Get resume
